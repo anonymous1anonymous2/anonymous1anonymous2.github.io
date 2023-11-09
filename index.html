@@ -64,13 +64,6 @@
             <h1 class="xtitle is-1 publication-title" style="font-size: 31px;"><strong>MC-VDM</strong></h1><br>
             <h2 class="xtitle is-1 publication-title" style="font-size: 29px;">: Motion Customization via Temporal Adaptation of Video Diffusion Models</h2>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a>Anonymous Authors</a>
-              </span>
-              <!-- <span class="author-block">
-                <a>Second Author</a><sup>*</sup>
-              </span> -->
             </div>
             <!-- Institution & Conference -->
             <!-- <div class="is-size-5 publication-authors">
@@ -130,57 +123,123 @@
 <section class="hero teaser">
 <div class="is-max-desktop">
 
-<div class="tldr">
-  TL;DR: Customize <span class="tldr highlight">Text-to-Video Diffusion Models</span> on the <span class="tldr highlight">motion of your video</span> by One-shot Temporal Tuning.
-</div>  
 
 <div id="results" style='background-color: rgb(255, 255, 255)'>
   <br>
-  <h2 class="tldr" style="font-size: 28px;">Teaser</h2>
+  <h2 class="tldr" style="font-size: 28px;">Motion Customization Results</h2>
   <div>
     <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
       <tbody>
         <tr>
           <th>
-            <img src="static/gifs/car/input.gif" width="320">
+            <img src="static/gifs/sharks_swimming/input.gif" width="500">
 
-              <div>
-                Input Video
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input Video of Motion <i style="color: red;">M</i>
               </div>
           </th>
           <th>
-            <img src="static/gifs/car/tank.gif" width="320">
+            <img src="static/gifs/sharks_swimming/goldfish_ocean.gif" width="500">
 
             <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
-              A tank is moving on the road.
+              Goldfish + <i style="color: red;">M</i> + In the ocean
             </div>
           </th>
           <th>
-            <img src="static/gifs/car/ice.gif" width="320">
+            <img src="static/gifs/sharks_swimming/iron_sky.gif" width="500">
 
             <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
-              A car is moving on the ice.
+              Iron Sharks + <i style="color: red;">M</i> + In the sky
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>
+            <img src="static/gifs/sharks_swimming/airplanes_sky.gif" width="500">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Airplanes + <i style="color: red;">M</i> + In the sky
             </div>
           </th>
           <th>
-            <img src="static/gifs/car_turn/input.gif" width="320">
+            <img src="static/gifs/sharks_swimming/spaceships_space.gif" width="500">
 
-              <div>
-                Input Video
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Spaceships + <i style="color: red;">M</i> + In space
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+
+
+    <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/car/input.gif" width="360">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input Video of Motion <i style="color: orange;">M</i>
               </div>
           </th>
           <th>
-            <img src="static/gifs/car_turn/tank.gif" width="320">
+            <img src="static/gifs/car/tank.gif" width="360">
 
             <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
-              A tank is moving on the road.
+              Tank + <i style="color: orange;">M</i> + On the road
             </div>
           </th>
           <th>
-            <img src="static/gifs/car_turn/desert.gif" width="320">
+            <img src="static/gifs/car/horse_road.gif" width="360">
 
             <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
-              A car is moving on the desert.
+              Horse + <i style="color: orange;">M</i> + On the road
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/car/ice.gif" width="360">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Car + <i style="color: orange;">M</i> + On the ice
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/car/bus_ice.gif" width="360">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Bus + <i style="color: orange;">M</i> + On the ice
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+
+    <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/car_turn/input.gif" width="560">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input Video of Motion <i style="color: greenyellow;">M</i>
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/car_turn/tank_road.gif" width="560">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Tank + <i style="color: greenyellow;">M</i> + On the road
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/car_turn/desert.gif" width="560">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Car + <i style="color: greenyellow;">M</i> + In desert
             </div>
           </th>
         </tr>
@@ -192,355 +251,194 @@
       <tbody>
         <tr>
           <th>
-            <img src="static/gifs/bear/input.gif" width="320">
+            <img src="static/gifs/bear/input.gif" width="560">
 
-              <div>
-                Input Video
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input Video of Motion <i style="color: green;">M</i>
               </div>
           </th>
           <th>
-            <img src="static/gifs/bear/panda_snow.gif" width="320">
+            <img src="static/gifs/bear/panda.gif" width="560">
 
             <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
-              A panda is walking on the snow.
+              Panda + <i style="color: green;">M</i>
             </div>
           </th>
           <th>
-            <img src="static/gifs/bear/tiger_snow.gif" width="320">
+            <img src="static/gifs/bear/panda_snow.gif" width="560">
 
             <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
-              A tiger is walking on the snow.
+              Panda + <i style="color: green;">M</i> + On the snow
             </div>
           </th>
           <th>
-            <img src="static/gifs/cat_flower/input.gif" width="320">
-
-              <div>
-                Input Video
-              </div>
-          </th>
-          <th>
-            <img src="static/gifs/cat_flower/puppy.gif" width="320">
+            <img src="static/gifs/bear/tiger_snow.gif" width="560">
 
             <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
-              Puppy is roaring.
-            </div>
-          </th>
-          <th>
-            <img src="static/gifs/cat_flower/tiger.gif" width="320">
-
-            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
-              Tiger is roaring.
+              Tiger + <i style="color: green;">M</i> + On the snow
             </div>
           </th>
         </tr>
       </tbody>
     </table>
+    <br><br>
     
-  </div>
-</div>
+    <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/cat_flower/input.gif" width="360">
 
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input Video of Motion <i style="color: blue;">M</i>
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/cat_flower/puppy.gif" width="360">
 
-<!-- <div class="marquee-wrapper-small">
-  <div class="marquee-item" style="margin: 10px; margin-top: 10px; margin-left: 30px;">
-    <img src="static/gifs/dog_walking/input.gif" alt="MY ALT TEXT"/>
-    <p class="caption-teaser">
-      "A <b style="color:black;">man</b> is walking a <b style="color:black;">dog</b> on the <b style="color:black;">road</b>."
-    </p>
-  </div>
-	<div class="container" style="text-align: center;">
-		<div class="marquee-block-small">
-			<div class="marquee-inner to-left">
-				<span>
-					<div class="marquee-item">
-            <img src="static/gifs/dog_walking/one1.gif" alt="MY ALT TEXT"/>
-						<p class="caption-teaser">
-              dog &rarr; lego dog
-            </p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/gifs/dog_walking/one2.gif" alt="MY ALT TEXT"/>
-						<p class="caption-teaser">
-              <br>
-              man &rarr; Homer Simpson
-            </p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/gifs/dog_walking/one3.gif" alt="MY ALT TEXT"/>
-						<p class="caption-teaser">
-              <br>
-              <br>
-              road &rarr; pond
-            </p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/gifs/dog_walking/one4.gif" alt="MY ALT TEXT"/>
-						<p class="caption-teaser">
-              <br>
-              <br>
-              road &rarr; ice
-            </p>
-					</div>
-          <div class="marquee-item">
-            <img src="static/gifs/dog_walking/two1.gif" alt="MY ALT TEXT"/>
-						<p class="caption-teaser">
-              dog &rarr; sheep<br>
-              man &rarr; Iron Man
-            </p>
-					</div>
-          <div class="marquee-item">
-            <img src="static/gifs/dog_walking/three1.gif" alt="MY ALT TEXT"/>
-						<p class="caption-teaser">
-              dog &rarr; sheep<br>
-              man &rarr; Iron Man
-              road &rarr; lake
-            </p>
-					</div>
-          <div class="marquee-item">
-            <img src="static/gifs/dog_walking/three2.gif" alt="MY ALT TEXT"/>
-						<p class="caption-teaser">
-              dog &rarr; goat<br>
-              man &rarr; farmer
-              road &rarr; snow road
-            </p>
-					</div>
-				</span>
-			</div>
-		</div>
-  </div>
-</div> -->
-
-</div>
-</section>
-
-
-
-<!-- <section class="hero teaser">
-  <div class="is-max-desktop">
-  <div class="marquee-wrapper">
-    <div class="container">
-      <div class="marquee-block" style="height:330px;">
-        <div class="marquee-inner to-left">
-          <span>
-            <div class="marquee-item">
-              <img src="static/gifs/surfing/input.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                "A <b style="color:red;">man</b> is surfing a wave."
-              </p>
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Puppy + <i style="color: blue;">M</i>
             </div>
-            <div class="marquee-item">
-              <img src="static/gifs/surfing/output1.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                <b style="color:red;">man</b> &rarr; <b style="color:blue;">Spider-man</b>
-              </p>
-            </div>
-            <div class="marquee-item">
-              <img src="static/gifs/surfing/output2.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                &plus; <b style="color:green;">Cezanne painting</b>
-              </p>
-            </div>
-            <div class="marquee-item">
-              <img src="static/gifs/skiing/input.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                "A <b style="color:red;">man</b> is skiing."
-              </p>
-            </div>
-            <div class="marquee-item">
-              <img src="static/gifs/skiing/output1.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                <b style="color:red;">man</b> &rarr; <b style="color:blue;">Spider-man</b>
-              </p>
-            </div>
-          </span>
-          <span>
-            <div class="marquee-item">
-              <img src="static/gifs/dog_walking/input.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                "A <b style="color:red;">man</b> is walking a <b style="color:red;">dog</b> on the <b style="color:red;">road</b>."
-              </p>
-            </div>
-            <div class="marquee-item">
-              <img src="static/gifs/dog_walking/output1.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                <b style="color:red;">man</b> &rarr; <b style="color:blue;">Iron Man</b> <br>
-                <b style="color:red;">dog</b> &rarr; <b style="color:blue;">sheep</b> <br>
-                <b style="color:red;">road</b> &rarr; <b style="color:blue;">lake</b>
-              </p>
-            </div>
-            <div class="marquee-item">
-              <img src="static/gifs/dog_walking/output2.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                <b style="color:red;">man</b> &rarr; <b style="color:blue;">farmer</b> <br>
-                <b style="color:red;">dog</b> &rarr; <b style="color:blue;">goat</b> <br>
-                <b style="color:red;">road</b> &rarr; <b style="color:blue;">snow road</b>
-              </p>
-            </div>
-            <div class="marquee-item">
-              <img src="static/gifs/dog_walking/output3.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                &plus; <b style="color:green;">Chinese painting style</b>
-              </p>
-            </div>
-            <div class="marquee-item">
-              <img src="static/gifs/dog_walking/output4.gif" alt="MY ALT TEXT"/>
-              <p class="caption-teaser">
-                &plus; <b style="color:green;">Van Gogh Starry night style</b>
-              </p>
-            </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </section> -->
+          </th>
+          <th>
+            <img src="static/gifs/cat_flower/tiger.gif" width="360">
 
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Tiger + <i style="color: blue;">M</i>
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/cat_flower/tiger_grass.gif" width="360">
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-            123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-            123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-            123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-            123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-            123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-            123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Tiger + <i style="color: blue;">M</i> + On the grass
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/cat_flower/wolf_snow.gif" width="360">
 
-<!-- Paper overview -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-justified">
-      <br>
-      <br>
-      <h2 class="title is-3">How does it Work?</h2>
-      <br>
-      <img class="center-img center" src="static/images/overview.png" width="100%">
-      <br>
-      <h3 class="subtitle" style="font-size: 18px;">
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      123123123123131231123123123123123123123121231312312312312321313123132131231231231231231232131231
-      </h3>
-    </div>
-  </div>
-</section>
-<!-- End Paper overview -->
-
-
-
-<!-- Comparison with other methods  -->
-<br>
-<br>
-<div id="results" style='background-color: rgb(243, 242, 242)'>
-  <br>
-  <h2 class="tldr" style="font-size: 28px;">Comparison with state-of-the-art approaches</h2>
-  <div>
-    <span style="display: inline-block; width: 95%; text-align: center; color:black; font-family: 'Comic Mono', sans-serif; font-size: 18px;">
-      "A cat is roaring." 	&#8680; "A <u style="font-weight: bold;">dog</u> is roaring <u style="font-weight: bold;">on the beach</u>, <u style="font-weight: bold;">under the sky</u>."
-    </span>
-    <br>
-      <table style="width: 45%;margin-left:auto;margin-right:auto; text-align: center;">
-          <tbody>
-            <tr>
-              <th>
-                  <video autoplay="" muted="" loop="" width="200">
-                      <source src="static/comparisons/cat_flower/dog_beach_sky/input.mp4">
-                  </video>
-                  <div>
-                      Input Video
-                  </div>
-              </th>
-              <th>
-                  <video autoplay="" muted="" loop="" width="200">
-                      <source src="static/comparisons/cat_flower/dog_beach_sky/Tune-A-Video-Control/vid.mp4">
-                  </video>
-                  <div>
-                      Tune A Video w/ ControlNet
-                  </div>
-              </th>
-              <th>
-                  <video autoplay="" muted="" loop="" width="200">
-                      <source src="static/comparisons/cat_flower/dog_beach_sky/Control-A-Video/vid.mp4">
-                  </video>
-                  <div>
-                      Control A Video
-                  </div>
-              </th>
-            </tr>
-            <tr>
-                <th>
-                    <video autoplay="" muted="" loop="" width="200">
-                        <source src="static/comparisons/cat_flower/dog_beach_sky/ControlVideo/vid.mp4">
-                    </video>
-                    <div>
-                        ControlVideo
-                    </div>
-                </th>
-                <th>
-                    <video autoplay="" muted="" loop="" width="200">
-                        <source src="static/comparisons/cat_flower/dog_beach_sky/Gen-1/vid.mp4">
-                    </video>
-                    <div>
-                        Gen-1
-                    </div>
-                </th>
-                <th>
-                    <video autoplay="" muted="" loop="" width="200">
-                        <source src="static/comparisons/cat_flower/dog_beach_sky/Ours/vid.mp4">
-                    </video>
-                    <div class="tldr highlight" style="font-size: 16px;">
-                        Ground A Video (ours)
-                    </div>
-                </th>
-            </tr>
-        </tbody>
-      </table>
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Wolf + <i style="color: blue;">M</i> + On the snow
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
     <br><br>
 
-    
-    
-    
+    <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/bird_hand/input.gif" width="560">
 
-        
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input Video of Motion <i style="color: blueviolet">M</i>
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/bird_hand/owl_cliff.gif" width="560">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Owl + <i style="color: blueviolet">M</i> + From a cliff
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/bird_hand/eagle_stone.gif" width="560">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Panda + <i style="color: blueviolet">M</i> + On the stone
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/bird_hand/seagull_sand.gif" width="560">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Tiger + <i style="color: blueviolet">M</i> + On the sand
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+
+    <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/child_bike/input.gif" width="360">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input Video of Motion <i style="color: blue;">M</i>
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/child_bike/desert.gif" width="360">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              <i style="color: blue;">M</i> + In the desert
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/child_bike/ice.gif" width="360">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              <i style="color: blue;">M</i> + On the ice
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/child_bike/motorbike.gif" width="360">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              <i style="color: blue;">M</i> + motorbike
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/child_bike/monkey.gif" width="360">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Monkey + <i style="color: blue;">M</i>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+
+    <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/skiing/input.gif" width="560">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input Video of Motion <i style="color: blueviolet">M</i>
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/skiing/spiderman.gif" width="560">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Spider-man + <i style="color: blueviolet">M</i>
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/skiing/astronaut_underwater.gif" width="560">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Astronaut + <i style="color: blueviolet">M</i> + underwater in deep sea
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+
   </div>
-<br>
-<br>
 </div>
-<!-- End Comparison with other methods  -->
 
 
 
-
-
-<div id="results" style='background-color: rgb(255, 255, 255)'>
-  <br>
-  <h2 class="tldr" style="font-size: 28px;">Results</h2>
-  <div style="text-align: center;">
-    TODO
-  </div>
-</div>
 
 
 
