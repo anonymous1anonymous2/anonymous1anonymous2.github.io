@@ -719,12 +719,139 @@
             </figure>
           </div>
 
+      </div>
+  </div>
+</div>
+<hr>
+
+<div id="results">
+  <div style="background-color: rgb(255, 255, 255);">
+      <h2 class="tldr" style="font-size: 26px;"><br>Video Tracking: Zero-shot Feature Comparison</h2>
+  </div>
+  <div style="background-color: white;">
+      <div style="width: 80%; margin: 0 auto; text-align: center;">
+          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+              <figure style="margin: 0; padding: 0;">
+                <div style="font-weight: bold;">
+                  Track4Gen (Ours)
+                </div>
+              </figure>
+              <figure style="margin: 0; padding: 0;">
+                <div style="font-weight: bold;">
+                  Stable Video Diffusion I2V
+                </div>
+              </figure>
+              <figure style="margin: 0; padding: 0;">
+                <div style="font-weight: bold;">
+                  ZeroScope T2V
+                </div>
+              </figure>
+          </div>
+
+          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_1/ours/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_1/original/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_1/zeroscope/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+          
+          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_2/ours/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_2/original/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_2/zeroscope/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+
+          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_0/ours/rainbow_interv_40_erosion_35.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_0/original/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/raw/BADJA_24_0/zeroscope/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
 
       </div>
   </div>
 </div>
 <hr>
 
+<div id="results">
+  <div style="background-color: rgb(255, 255, 255);">
+      <h2 class="tldr" style="font-size: 26px;"><br>Track4Gen with Test-time Optimization (from DINO-Tracker)</h2>
+  </div>
+  <div style="background-color: white;">
+      <div style="width: 80%; margin: 0 auto; text-align: center;">
+          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_1/rainbow_interv_30_erosion_30_big.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_13/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_14/rainbow_interv_20_erosion_20.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+
+          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_11/rainbow_interv_40_erosion_20.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_10/rainbow_interv_30_erosion_10.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure>
+              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
+                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_0/rainbow_interv_30_erosion_30.mp4" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+      </div>
+  </div>
+</div>
+<hr>
 
 
 </div>
