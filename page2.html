@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Track4Gen</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <style>
+    body {
+      padding: 2em;
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2.5em 2.5em;
+      background-color: #333;
+      color: white;
+      border-radius: 1em;
+      margin-bottom: 2em;
+      font-family: sans-serif;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin: 0;
+      font-weight: bold;
+      
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 0.5em 0 0;
+    }
+
+    iframe {
+      border-radius: 0.5em;
+      width: 40em;
+      height: 40em;
+      border: none;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 30em;
+      }
+    }
+
+    a,
+    a:link {
+      color: #777;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #333;
+    }
+
+    /* Styles for the instruction icons and text */
+    .instructions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .instruction-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.5em;
+    }
+
+    .instruction-item img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .teaser {
+      text-align: center;
+      margin-bottom: 3em;
+      padding: 2em;
+      background-color: #ffffff;
+      border-radius: 1em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.1);
+    }
+
+    .teaser-title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .teaser-description {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+      max-width: 1150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .teaser-visuals {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .teaser-visual {
+      text-align: center;
+    }
+
+    .teaser-visual img {
+      width: 30em;
+      border-radius: 0.5em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    .teaser-visual p {
+      margin-top: 0.5em;
+      font-weight: bold;
+    }
+  </style>
+  <title>Anonymous Results</title>
+</head>
+
+<body>
+  <!-- Hero section with title and description -->
+  <div class="hero">
+    <h1>Track4Gen: Teaching Video Diffusion Models to Track Points <br>
+      Improves Video Generation</h1>
+    <!-- <p>Explore our latest research on video generation and see our anonymous results presented at CVPR.</p> -->
+  </div>
+
+
+  <p style="text-align: center; font-size: 1.2em; padding: 0em; font-weight: bold;">
+    Please click on other pages to see more results
+  </p>
+
+  <div style="text-align: center; font-size: 1.2em; font-weight: bold; color: #000000; ">
+    <!-- Navigation links -->
+    <a href="index.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 1
+    </a>
+    &nbsp;&bull;&nbsp;
+    <strong>Page 2</strong>
+    &nbsp;&bull;&nbsp;
+    <a href="page3.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 3
+    </a>
+  </div>
+
+
+  <br><br>
+  <!-- Teaser results section -->
+  <div class="teaser">
+    <div class="teaser-title">Video Generation Comparison (1/4)</div>
+    <p class="teaser-description" style="font-size: x-large; font-weight: 500;">
+      Pretrained Stable Video Diffusion vs Track4Gen
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <img src="static/gifs/vid-gen/vbench/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/two sheep grazing in the grass next to a wooden bridge.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Pretrained Stable Video Diffusion</p>
+        <img src="static/gifs/vid-gen/vbench/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/original/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Track4Gen</p>
+        <img src="static/gifs/vid-gen/vbench/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/ours/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/an-airplane-is-flying-through-the-sky-at-sunset/an airplane is flying through the sky at sunset.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/an-airplane-is-flying-through-the-sky-at-sunset/original/an-airplane-is-flying-through-the-sky-at-sunset.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/an-airplane-is-flying-through-the-sky-at-sunset/ours/an-airplane-is-flying-through-the-sky-at-sunset.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/A-bunch-of-cars-are-driving-on-a-highway/A bunch of cars are driving on a highway.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/A-bunch-of-cars-are-driving-on-a-highway/original/A-bunch-of-cars-are-driving-on-a-highway.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/A-bunch-of-cars-are-driving-on-a-highway/ours/A-bunch-of-cars-are-driving-on-a-highway.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-basket-of-french-fries-in-a-fryer/a basket of french fries in a fryer.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-basket-of-french-fries-in-a-fryer/original/a-basket-of-french-fries-in-a-fryer.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-basket-of-french-fries-in-a-fryer/ours/a-basket-of-french-fries-in-a-fryer.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-brown-and-white-cow-eating-hay/a brown and white cow eating hay.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-brown-and-white-cow-eating-hay/original/a-brown-and-white-cow-eating-hay.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-brown-and-white-cow-eating-hay/ours/a-brown-and-white-cow-eating-hay.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-city-street-with-cars-driving-in-the-rain/a city street with cars driving in the rain.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-city-street-with-cars-driving-in-the-rain/original/a-city-street-with-cars-driving-in-the-rain.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-city-street-with-cars-driving-in-the-rain/ours/a-city-street-with-cars-driving-in-the-rain.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-close-up-of-a-piece-of-sushi-on-chopsticks/a close up of a piece of sushi on chopsticks.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-close-up-of-a-piece-of-sushi-on-chopsticks/original/a-close-up-of-a-piece-of-sushi-on-chopsticks.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-close-up-of-a-piece-of-sushi-on-chopsticks/ours/a-close-up-of-a-piece-of-sushi-on-chopsticks.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-couple-of-wooden-benches-in-the-middle-of-a-street/a couple of wooden benches in the middle of a street.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-couple-of-wooden-benches-in-the-middle-of-a-street/original/a-couple-of-wooden-benches-in-the-middle-of-a-street.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-couple-of-wooden-benches-in-the-middle-of-a-street/ours/a-couple-of-wooden-benches-in-the-middle-of-a-street.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-great-white-shark-swimming-in-the-ocean/a great white shark swimming in the ocean.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-great-white-shark-swimming-in-the-ocean/original/a-great-white-shark-swimming-in-the-ocean.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-great-white-shark-swimming-in-the-ocean/ours/a-great-white-shark-swimming-in-the-ocean.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-brown-bear-in-the-water-with-a-fish-in-its-mouth/a brown bear in the water with a fish in its mouth.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-brown-bear-in-the-water-with-a-fish-in-its-mouth/original/a-brown-bear-in-the-water-with-a-fish-in-its-mouth.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/vbench/a-brown-bear-in-the-water-with-a-fish-in-its-mouth/ours/a-brown-bear-in-the-water-with-a-fish-in-its-mouth.gif">
+      </div>
+    </div>
+    <br>
+
+  </div>
+  <br><br>
+
+
+  <!-- Teaser results section -->
+  <div class="teaser">
+    <div class="teaser-title">Video Generation Comparison (2/4)</div>
+    <p class="teaser-description" style="font-size: x-large; font-weight: 500;">
+      Finetuned Stable Video Diffusion vs Track4Gen
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/a-person-is-holding-up-a-burger-with-his-hands/a person is holding up a burger with his hands.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Finetuned Stable Video Diffusion</p>
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/a-person-is-holding-up-a-burger-with-his-hands/no_corr/a-person-is-holding-up-a-burger-with-his-hands.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Track4Gen</p>
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/a-person-is-holding-up-a-burger-with-his-hands/ours/a-person-is-holding-up-a-burger-with-his-hands.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/metal-balls-are-suspended-in-the-airb/metal balls are suspended in the air.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/metal-balls-are-suspended-in-the-airb/no_corr/metal-balls-are-suspended-in-the-air.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/metal-balls-are-suspended-in-the-airb/ours/metal-balls-are-suspended-in-the-air.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/The-meat-is-picked-up-from-the-grill-with-tongs/The meat is picked up from the grill with tongs.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/The-meat-is-picked-up-from-the-grill-with-tongs/no_corr/The-meat-is-picked-up-from-the-grill-with-tongs.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/The-meat-is-picked-up-from-the-grill-with-tongs/ours/The-meat-is-picked-up-from-the-grill-with-tongs.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/the-pyramids-of-giza,-egypt/the pyramids of giza, egypt.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/the-pyramids-of-giza,-egypt/no_corr/the-pyramids-of-giza,-egypt.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/the-pyramids-of-giza,-egypt/ours/the-pyramids-of-giza,-egypt.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/two-cars-that-have-been-involved-in-a-violent-collision/two cars that have been involved in a violent collision.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/two-cars-that-have-been-involved-in-a-violent-collision/no_corr/two-cars-that-have-been-involved-in-a-violent-collision.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_corr/two-cars-that-have-been-involved-in-a-violent-collision/ours/two-cars-that-have-been-involved-in-a-violent-collision.gif">
+      </div>
+    </div>
+    <br>
+  </div>
+  <br>
+  
+  <!-- Teaser results section -->
+  <div class="teaser">
+    <div class="teaser-title">Video Generation Comparison (3/4)</div>
+    <p class="teaser-description" style="font-size: x-large; font-weight: 500;">
+      Track4Gen trained without Refiner vs Track4Gen
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-slicing-salmon-on-a-cutting-board/a person slicing salmon on a cutting board.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Track4Gen <i>without Refiner</i></p>
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-slicing-salmon-on-a-cutting-board/no_corr/a-person-slicing-salmon-on-a-cutting-board.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Track4Gen</p>
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-slicing-salmon-on-a-cutting-board/ours/a-person-slicing-salmon-on-a-cutting-board.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-penguin-walking-on-a-beach-near-the-water/a penguin walking on a beach near the water.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-penguin-walking-on-a-beach-near-the-water/no_refiner/a-penguin-walking-on-a-beach-near-the-water.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-penguin-walking-on-a-beach-near-the-water/ours/a-penguin-walking-on-a-beach-near-the-water.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-holding-a-taco-in-their-hand/a person holding a taco in their hand.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-holding-a-taco-in-their-hand/no_refiner/a-person-holding-a-taco-in-their-hand.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-holding-a-taco-in-their-hand/ours/a-person-holding-a-taco-in-their-hand.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-is-cooking-food-in-a-wok-on-a-stove/a person is cooking food in a wok on a stove.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-is-cooking-food-in-a-wok-on-a-stove/no_refiner/a-person-is-cooking-food-in-a-wok-on-a-stove.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-is-cooking-food-in-a-wok-on-a-stove/ours/a-person-is-cooking-food-in-a-wok-on-a-stove.gif">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/A-person-is-pouring-water-into-a-teacup/A person is pouring water into a teacup.jpg">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/A-person-is-pouring-water-into-a-teacup/no_refiner/A-person-is-pouring-water-into-a-teacup.gif">
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/vid-gen/ours_vs_no_refiner/A-person-is-pouring-water-into-a-teacup/ours/A-person-is-pouring-water-into-a-teacup.gif">
+      </div>
+    </div>
+  </div>
+
+  
+  
+</body>
+
+</html>

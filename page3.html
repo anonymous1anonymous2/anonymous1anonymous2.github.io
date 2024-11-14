@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Track4Gen</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <style>
+    body {
+      padding: 2em;
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2.5em 2.5em;
+      background-color: #333;
+      color: white;
+      border-radius: 1em;
+      margin-bottom: 2em;
+      font-family: sans-serif;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin: 0;
+      font-weight: bold;
+      
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 0.5em 0 0;
+    }
+
+    iframe {
+      border-radius: 0.5em;
+      width: 40em;
+      height: 40em;
+      border: none;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 30em;
+      }
+    }
+
+    a,
+    a:link {
+      color: #777;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #333;
+    }
+
+    /* Styles for the instruction icons and text */
+    .instructions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .instruction-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.5em;
+    }
+
+    .instruction-item img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .teaser {
+      text-align: center;
+      margin-bottom: 3em;
+      padding: 2em;
+      background-color: #ffffff;
+      border-radius: 1em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.1);
+    }
+
+    .teaser-title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .teaser-description {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+      max-width: 1150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .teaser-visuals {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .teaser-visual {
+      text-align: center;
+    }
+
+    .teaser-visual img {
+      width: 30em;
+      border-radius: 0.5em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    .teaser-visual p {
+      margin-top: 0.5em;
+      font-weight: bold;
+    }
+  </style>
+  <title>Anonymous Results</title>
+</head>
+
+<body>
+  <!-- Hero section with title and description -->
+  <div class="hero">
+    <h1>Track4Gen: Teaching Video Diffusion Models to Track Points <br>
+      Improves Video Generation</h1>
+    <!-- <p>Explore our latest research on video generation and see our anonymous results presented at CVPR.</p> -->
+  </div>
+
+
+  <p style="text-align: center; font-size: 1.2em; padding: 0em; font-weight: bold;">
+    Please click on other pages to see more results
+  </p>
+
+  <div style="text-align: center; font-size: 1.2em; font-weight: bold; color: #000000; ">
+    <!-- Navigation links -->
+    <a href="index.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 1
+    </a>
+    &nbsp;&bull;&nbsp;
+    <a href="page2.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 2
+    </a>
+    &nbsp;&bull;&nbsp;
+    <strong>Page 3</strong>
+  </div>
+
+
+  <br><br>
+  <!-- Teaser results section -->
+  <div class="teaser">
+    <div class="teaser-title">Raw Feature Comparison on Video Tracking</div>
+    <p class="teaser-description" style="font-size: x-large; font-weight: 500;">
+      Track4Gen vs Stable Video Diffusion (I2V) vs ZeroScope (T2V)
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Track4Gen</p>
+        <video src="static/gifs/vid-track/raw/BADJA_24_1/ours/rainbow_interv_40_erosion_45.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Stable Video Diffusion</p>
+        <video src="static/gifs/vid-track/raw/BADJA_24_1/original/rainbow_interv_40_erosion_45.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">ZeroScope</p>
+        <video src="static/gifs/vid-track/raw/BADJA_24_1/zeroscope/rainbow_interv_40_erosion_45.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/raw/BADJA_24_2/ours/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/raw/BADJA_24_2/original/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/raw/BADJA_24_2/zeroscope/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/raw/BADJA_24_0/ours/rainbow_interv_40_erosion_35.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/raw/BADJA_24_0/original/rainbow_interv_40_erosion_45.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/raw/BADJA_24_0/zeroscope/rainbow_interv_40_erosion_45.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <!-- Teaser results section -->
+  <div class="teaser">
+    <div class="teaser-title">Extending Track4Gen with Test-time Adaptation</div>
+    <p class="teaser-description" style="font-size: x-large; font-weight: 500;">
+      We integrate our features with test-time adaptation algorithm of DINO-Tracker.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_1/rainbow_interv_30_erosion_30_big.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_13/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_14/rainbow_interv_20_erosion_20.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_11/rainbow_interv_40_erosion_20.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_10/rainbow_interv_30_erosion_10.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_0/rainbow_interv_30_erosion_30.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+    </div>
+
+  </div>
+
+  
+</body>
+
+</html>

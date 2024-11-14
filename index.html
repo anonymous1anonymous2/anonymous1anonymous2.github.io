@@ -1,865 +1,314 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <title>Track4Gen</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <style>
+    body {
+      padding: 2em;
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+    }
 
+    .hero {
+      text-align: center;
+      padding: 2.5em 2.5em;
+      background-color: #333;
+      color: white;
+      border-radius: 1em;
+      margin-bottom: 2em;
+      font-family: sans-serif;
+    }
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <title>Anonymous Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-	    tex2jax: {
-	        inlineMath: [['$','$'], ['\\(','\\)']],
-	        processEscapes: true
-	    }
-	});
-    </script>
-  <script src="static/js/index.js"></script>
-</head>
-<body>
-
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h2 class="xtitle is-1 publication-title" style="font-size: 35px;">
-              Track4Gen: Teaching Video Diffusion Models to Track Points Improves Video Generation
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="hero teaser">
-<div class="is-max-desktop">
-
-  <div id="results">
-    <div style="background-color: rgb(255, 255, 255);">
-        <h2 class="tldr" style="font-size: 26px;">
-          <br> Motivation
-        </h2>
-    </div>
-    <div style="background-color: white;">
-        <div style="width: 80%; margin: 0 auto; text-align: center;">
-            <div style="display: flex; justify-content: space-around; margin-bottom: 5px;">
-                <figure style="margin: 0; padding: 0;">
-                  <div style="font-weight: bold;">
-                    Input Image
-                  </div>
-                </figure>
-                <figure style="margin: 0; padding: 0;">
-                  <div style="font-weight: bold;">
-                    Stable Video Diffusion
-                  </div>
-                </figure>
-                <figure style="margin: 0; padding: 0;">
-                  <div style="font-weight: bold;">
-                    Track4Gen (Ours)
-                  </div>
-                </figure>
-            </div>
-  
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-highland-cow-with-long-horns-standing-in-a-field/a highland cow with long horns standing in a field.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-highland-cow-with-long-horns-standing-in-a-field/original/a-highland-cow-with-long-horns-standing-in-a-field.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-highland-cow-with-long-horns-standing-in-a-field/ours/a-highland-cow-with-long-horns-standing-in-a-field.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
-        
-        </div>
-    </div>
-    <h3 class="tldr" style="text-align: center; font-size: 18px;">
-      Videos generated by Stable Video Diffusion suffer from appearance drift, while those from our method, Track4Gen, are free from such appearance inconsistency issues.
-    </h3>
-  </div>
-  <hr>
-
-
-
-  <div id="results">
-    <div style='background-color: rgb(255, 255, 255)'>
-      <h2 class="tldr" style="font-size: 26px;"><br>Temporal Correspondence of Video Diffusion Modles (Real-world Video Tracking)</h2>
-      <!-- <h3 class="tldr">(Real-world Video Tracking using Raw Video Diffusion Features)</h3> -->
-    </div>
-    <div style='background-color: white;'>
-      <table style="width: 65%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
-        <tbody>
-
-          <!-- goat -->
-          <tr>
-            <th>
-              <div style="font-weight: bold;">
-                Upsampler Features of 1st Decoder Block
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="border-radius: 4px;">
-                  <source src="static/gifs/ob1/goat/ups_0.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-            <th>
-              <div style="font-weight: bold;">
-                Upsampler Features of 2nd Decoder Block
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="border-radius: 4px;">
-                  <source src="static/gifs/ob1/goat/ups_1.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-            <th>
-              <div style="font-weight: bold;">
-                Upsampler Features of 3rd Decoder Block
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="border-radius: 4px;">
-                  <source src="static/gifs/ob1/goat/ups_2.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-          </tr><br>
-
-          <!-- swan -->
-          <tr>
-            <th>
-              <div style="font-weight: bold;">
-                Upsampler Features of 1st Decoder Block
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="border-radius: 4px;">
-                  <source src="static/gifs/ob1/swan/ups_0.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-            <th>
-              <div style="font-weight: bold;">
-                Upsampler Features of 2nd Decoder Block
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="border-radius: 4px;">
-                  <source src="static/gifs/ob1/swan/ups_1.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-            <th>
-              <div style="font-weight: bold;">
-                Upsampler Features of 3rd Decoder Block
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="border-radius: 4px;">
-                  <source src="static/gifs/ob1/swan/ups_2.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-          </tr><br>
-         
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <hr>
-
-
-  <div id="results">
-    <div style='background-color: rgb(255, 255, 255)'>
-      <h2 class="tldr" style="font-size: 26px;"><br>Pixel-space and Diffusion Feature-space Inconsistencies (Generated Video Tracking)</h2>
-    </div>
-    <div style='background-color: white; font-size: 14px;'>
-      <table style="width: 64%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 15px; border-collapse: separate; ">
-        <tbody>
-
-          <!-- eagle -->
-          <tr>
-            <th>
-              <div style="font-weight: bold;">
-                Feature-space Inconsistency (Video Tracking using diffusion features)
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                  <source src="static/gifs/ob2/eagle/original/vid-track/rainbow_interv_30_erosion_25.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-            <th>
-              <div style="font-weight: bold;">
-                Pixel-space Inconsistency (Generated video with inconsistent appearance)
-              </div>
-              <figure>
-                <img src="static/gifs/ob2/eagle/original/vid-gen/a-bald-eagle-flying-over-a-tree-filled-forest.gif" 
-                  style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </th>
-          </tr>
-
-          <tr>
-            <th>
-              <div style="font-weight: bold;">
-                Feature-space Consistency (Video Tracking using diffusion features)  
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                  <source src="static/gifs/ob2/eagle/ours/vid-track/rainbow_interv_30_erosion_25.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-            <th>
-              <div style="font-weight: bold;">
-                Pixel-space Consistency (Generated video with consistent appearance)
-              </div>
-              <figure>
-                <img src="static/gifs/ob2/eagle/ours/vid-gen/a-bald-eagle-flying-over-a-tree-filled-forest.gif" 
-                  style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </th>
-          </tr><br>
-
-          
-        </tbody>
-      </table>
-
-      <table style="width: 64%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 15px; border-collapse: separate; ">
-        <tbody>
-
-          <!-- lioness -->
-          <tr>
-            <th>
-              <div style="font-weight: bold;">
-                Feature-space Inconsistency (Video Tracking using diffusion features)
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                  <source src="static/gifs/ob2/lioness/original/vid-track/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-            <th>
-              <div style="font-weight: bold;">
-                Pixel-space Inconsistency (Generated video with inconsistent appearance)
-              </div>
-              <figure>
-                <img src="static/gifs/ob2/lioness/original/vid-gen/generated.gif" 
-                  style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </th>
-          </tr>
-
-          <tr>
-            <th>
-              <div style="font-weight: bold;">
-                Feature-space Consistency (Video Tracking using diffusion features)  
-              </div>
-              <figure>
-                <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                  <source src="static/gifs/ob2/lioness/ours/vid-track/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </th>
-            <th>
-              <div style="font-weight: bold;">
-                Pixel-space Consistency (Generated video with consistent appearance)
-              </div>
-              <figure>
-                <img src="static/gifs/ob2/lioness/ours/vid-gen/generated.gif" 
-                  style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </th>
-          </tr><br>
-
-          
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <hr>
-
-
-
-  <div id="results">
-    <div style="background-color: rgb(255, 255, 255);">
-        <h2 class="tldr" style="font-size: 26px;"><br>Video Generation Comparison (1/3)</h2>
-    </div>
-    <div style="background-color: white;">
-        <div style="width: 80%; margin: 0 auto; text-align: center;">
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-                <figure style="margin: 0; padding: 0;">
-                  <div style="font-weight: bold;">
-                    Input Image
-                  </div>
-                </figure>
-                <figure style="margin: 0; padding: 0;">
-                  <div style="font-weight: bold;">
-                    Stable Video Diffusion (Original)
-                  </div>
-                </figure>
-                <figure style="margin: 0; padding: 0;">
-                  <div style="font-weight: bold;">
-                    Track4Gen (Ours)
-                  </div>
-                </figure>
-            </div>
-
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/two sheep grazing in the grass next to a wooden bridge.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/original/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/ours/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
-
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/an-airplane-is-flying-through-the-sky-at-sunset/an airplane is flying through the sky at sunset.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/an-airplane-is-flying-through-the-sky-at-sunset/original/an-airplane-is-flying-through-the-sky-at-sunset.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/an-airplane-is-flying-through-the-sky-at-sunset/ours/an-airplane-is-flying-through-the-sky-at-sunset.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
-
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/A-bunch-of-cars-are-driving-on-a-highway/A bunch of cars are driving on a highway.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/A-bunch-of-cars-are-driving-on-a-highway/original/A-bunch-of-cars-are-driving-on-a-highway.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/A-bunch-of-cars-are-driving-on-a-highway/ours/A-bunch-of-cars-are-driving-on-a-highway.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
+    .hero h1 {
+      font-size: 2.5em;
+      margin: 0;
+      font-weight: bold;
       
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-basket-of-french-fries-in-a-fryer/a basket of french fries in a fryer.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-basket-of-french-fries-in-a-fryer/original/a-basket-of-french-fries-in-a-fryer.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-basket-of-french-fries-in-a-fryer/ours/a-basket-of-french-fries-in-a-fryer.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
-            
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-brown-and-white-cow-eating-hay/a brown and white cow eating hay.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-brown-and-white-cow-eating-hay/original/a-brown-and-white-cow-eating-hay.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-brown-and-white-cow-eating-hay/ours/a-brown-and-white-cow-eating-hay.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
+    }
 
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-city-street-with-cars-driving-in-the-rain/a city street with cars driving in the rain.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-city-street-with-cars-driving-in-the-rain/original/a-city-street-with-cars-driving-in-the-rain.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-city-street-with-cars-driving-in-the-rain/ours/a-city-street-with-cars-driving-in-the-rain.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
+    .hero p {
+      font-size: 1.2em;
+      margin: 0.5em 0 0;
+    }
 
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-close-up-of-a-piece-of-sushi-on-chopsticks/a close up of a piece of sushi on chopsticks.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-close-up-of-a-piece-of-sushi-on-chopsticks/original/a-close-up-of-a-piece-of-sushi-on-chopsticks.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-close-up-of-a-piece-of-sushi-on-chopsticks/ours/a-close-up-of-a-piece-of-sushi-on-chopsticks.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
+    iframe {
+      border-radius: 0.5em;
+      width: 40em;
+      height: 40em;
+      border: none;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
 
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-couple-of-wooden-benches-in-the-middle-of-a-street/a couple of wooden benches in the middle of a street.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-couple-of-wooden-benches-in-the-middle-of-a-street/original/a-couple-of-wooden-benches-in-the-middle-of-a-street.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-couple-of-wooden-benches-in-the-middle-of-a-street/ours/a-couple-of-wooden-benches-in-the-middle-of-a-street.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 30em;
+      }
+    }
 
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-great-white-shark-swimming-in-the-ocean/a great white shark swimming in the ocean.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-great-white-shark-swimming-in-the-ocean/original/a-great-white-shark-swimming-in-the-ocean.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-great-white-shark-swimming-in-the-ocean/ours/a-great-white-shark-swimming-in-the-ocean.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
+    a,
+    a:link {
+      color: #777;
+      text-decoration: none;
+    }
 
-            <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-brown-bear-in-the-water-with-a-fish-in-its-mouth/a brown bear in the water with a fish in its mouth.jpg" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-brown-bear-in-the-water-with-a-fish-in-its-mouth/original/a-brown-bear-in-the-water-with-a-fish-in-its-mouth.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <img src="static/gifs/vid-gen/vbench/a-brown-bear-in-the-water-with-a-fish-in-its-mouth/ours/a-brown-bear-in-the-water-with-a-fish-in-its-mouth.gif" 
-                style="width: 480px; height: 270px; border-radius: 4px;">
-              </figure>
-            </div>
+    a:hover {
+      color: #333;
+    }
 
-        </div>
+    /* Styles for the instruction icons and text */
+    .instructions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .instruction-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.5em;
+    }
+
+    .instruction-item img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .teaser {
+      text-align: center;
+      margin-bottom: 3em;
+      padding: 2em;
+      background-color: #ffffff;
+      border-radius: 1em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.1);
+    }
+
+    .teaser-title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .teaser-description {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+      max-width: 1150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .teaser-visuals {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .teaser-visual {
+      text-align: center;
+    }
+
+    .teaser-visual img {
+      width: 30em;
+      border-radius: 0.5em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    .teaser-visual p {
+      margin-top: 0.5em;
+      font-weight: bold;
+    }
+  </style>
+  <title>Anonymous Results</title>
+</head>
+
+<body>
+  <!-- Hero section with title and description -->
+  <div class="hero">
+    <h1>Track4Gen: Teaching Video Diffusion Models to Track Points <br>
+      Improves Video Generation</h1>
+    <!-- <p>Explore our latest research on video generation and see our anonymous results presented at CVPR.</p> -->
+  </div>
+
+
+  <p style="text-align: center; font-size: 1.2em; padding: 0em; font-weight: bold;">
+    Please click on other pages to see more results
+  </p>
+
+  <div style="text-align: center; font-size: 1.2em; font-weight: bold; color: #000000; ">
+    <!-- Navigation links -->
+    <strong>Page 1</strong>
+    &nbsp;&bull;&nbsp;
+    <a href="page2.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 2
+    </a>
+    &nbsp;&bull;&nbsp;
+    <a href="page3.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 3
+    </a>
+  </div>
+
+
+  <br><br>
+  <!-- Teaser results section -->
+  <div class="teaser">
+    <div class="teaser-title">Motivation</div>
+    <p class="teaser-description">
+      Current video generators often suffer from <b><i>appearance drift</i></b>, where visual elements gradually change, mutate, or degrade over time, causing inconsistencies in the objects.
+      Videos generated by <b>Track4Gen</b> are free from such appearance inconsistency issues.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/a highland cow with long horns standing in a field.jpg" alt="Input Image">
+        <p style="font-size: larger;">Input Image</p>
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/original/a-highland-cow-with-long-horns-standing-in-a-field.gif" alt="Stable Video Diffusion">
+        <p style="font-size: larger;">Pretrained Stable Video Diffusion</p>
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/ours/a-highland-cow-with-long-horns-standing-in-a-field.gif" alt="Track4Gen">
+        <p style="font-size: larger;">Track4Gen</p>
+      </div>
     </div>
-</div>
-<hr>
-
-<div id="results">
-  <div style="background-color: rgb(255, 255, 255);">
-      <h2 class="tldr" style="font-size: 26px;"><br>Video Generation Comparison (2/3) </h2>
   </div>
-  <div style="background-color: white;">
-      <div style="width: 80%; margin: 0 auto; text-align: center;">
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  Input Image
-                </div>
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  finetuned SVD
-                </div>
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  Track4Gen (Ours)
-                </div>
-              </figure>
-          </div>
+  <br><br>
 
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/a-person-is-holding-up-a-burger-with-his-hands/a person is holding up a burger with his hands.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/a-person-is-holding-up-a-burger-with-his-hands/no_corr/a-person-is-holding-up-a-burger-with-his-hands.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/a-person-is-holding-up-a-burger-with-his-hands/ours/a-person-is-holding-up-a-burger-with-his-hands.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-          
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/metal-balls-are-suspended-in-the-airb/metal balls are suspended in the air.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/metal-balls-are-suspended-in-the-airb/no_corr/metal-balls-are-suspended-in-the-air.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/metal-balls-are-suspended-in-the-airb/ours/metal-balls-are-suspended-in-the-air.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/The-meat-is-picked-up-from-the-grill-with-tongs/The meat is picked up from the grill with tongs.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/The-meat-is-picked-up-from-the-grill-with-tongs/no_corr/The-meat-is-picked-up-from-the-grill-with-tongs.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/The-meat-is-picked-up-from-the-grill-with-tongs/ours/The-meat-is-picked-up-from-the-grill-with-tongs.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/the-pyramids-of-giza,-egypt/the pyramids of giza, egypt.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/the-pyramids-of-giza,-egypt/no_corr/the-pyramids-of-giza,-egypt.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/the-pyramids-of-giza,-egypt/ours/the-pyramids-of-giza,-egypt.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/two-cars-that-have-been-involved-in-a-violent-collision/two cars that have been involved in a violent collision.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/two-cars-that-have-been-involved-in-a-violent-collision/no_corr/two-cars-that-have-been-involved-in-a-violent-collision.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/two-cars-that-have-been-involved-in-a-violent-collision/ours/two-cars-that-have-been-involved-in-a-violent-collision.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-
-          <!-- <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/three-geishas-walking-down-the-street-in-traditional-clothing/three geishas walking down the street in traditional clothing.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/three-geishas-walking-down-the-street-in-traditional-clothing/no_corr/three-geishas-walking-down-the-street-in-traditional-clothing.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_corr/three-geishas-walking-down-the-street-in-traditional-clothing/ours/three-geishas-walking-down-the-street-in-traditional-clothing.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div> -->
-
+  
+  <!-- Real video tracking -->
+  <div class="teaser">
+    <div class="teaser-title">Real-world Video Tracking</div>
+    <p class="teaser-description">
+      We track real-world videos using different video diffusion features.
+      Given color-coded query points on the first frame, tracked points on the whole video frames using features from different blocks are displayed.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of First Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_0.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
       </div>
-  </div>
-</div>
-<hr>
-
-<div id="results">
-  <div style="background-color: rgb(255, 255, 255);">
-      <h2 class="tldr" style="font-size: 26px;"><br>Video Generation Comparison (3/3)</h2>
-  </div>
-  <div style="background-color: white;">
-      <div style="width: 80%; margin: 0 auto; text-align: center;">
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  Input Image
-                </div>
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  Track4Gen trained without Refiner
-                </div>
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  Track4Gen (Ours)
-                </div>
-              </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-slicing-salmon-on-a-cutting-board/a person slicing salmon on a cutting board.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-slicing-salmon-on-a-cutting-board/no_corr/a-person-slicing-salmon-on-a-cutting-board.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-slicing-salmon-on-a-cutting-board/ours/a-person-slicing-salmon-on-a-cutting-board.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-          
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-penguin-walking-on-a-beach-near-the-water/a penguin walking on a beach near the water.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-penguin-walking-on-a-beach-near-the-water/no_refiner/a-penguin-walking-on-a-beach-near-the-water.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-penguin-walking-on-a-beach-near-the-water/ours/a-penguin-walking-on-a-beach-near-the-water.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-holding-a-taco-in-their-hand/a person holding a taco in their hand.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-holding-a-taco-in-their-hand/no_refiner/a-person-holding-a-taco-in-their-hand.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-holding-a-taco-in-their-hand/ours/a-person-holding-a-taco-in-their-hand.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-is-cooking-food-in-a-wok-on-a-stove/a person is cooking food in a wok on a stove.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-is-cooking-food-in-a-wok-on-a-stove/no_refiner/a-person-is-cooking-food-in-a-wok-on-a-stove.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/a-person-is-cooking-food-in-a-wok-on-a-stove/ours/a-person-is-cooking-food-in-a-wok-on-a-stove.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-          
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/A-person-is-pouring-water-into-a-teacup/A person is pouring water into a teacup.jpg" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/A-person-is-pouring-water-into-a-teacup/no_refiner/A-person-is-pouring-water-into-a-teacup.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-            <figure style="margin: 0; padding: 0;">
-              <img src="static/gifs/vid-gen/ours_vs_no_refiner/A-person-is-pouring-water-into-a-teacup/ours/A-person-is-pouring-water-into-a-teacup.gif" 
-              style="width: 480px; height: 270px; border-radius: 4px;">
-            </figure>
-          </div>
-
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of Second Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_1.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
       </div>
-  </div>
-</div>
-<hr>
-
-<div id="results">
-  <div style="background-color: rgb(255, 255, 255);">
-      <h2 class="tldr" style="font-size: 26px;"><br>Video Tracking: Zero-shot Feature Comparison</h2>
-  </div>
-  <div style="background-color: white;">
-      <div style="width: 80%; margin: 0 auto; text-align: center;">
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  Track4Gen (Ours)
-                </div>
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  Stable Video Diffusion I2V
-                </div>
-              </figure>
-              <figure style="margin: 0; padding: 0;">
-                <div style="font-weight: bold;">
-                  ZeroScope T2V
-                </div>
-              </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_1/ours/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_1/original/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_1/zeroscope/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
-              </video>
-            </figure>
-          </div>
-          
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_2/ours/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_2/original/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_2/zeroscope/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
-              </video>
-            </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_0/ours/rainbow_interv_40_erosion_35.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_0/original/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/raw/BADJA_24_0/zeroscope/rainbow_interv_40_erosion_45.mp4" type="video/mp4">
-              </video>
-            </figure>
-          </div>
-
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of Third Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_2.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
       </div>
-  </div>
-</div>
-<hr>
+    </div>
+    <br>
 
-<div id="results">
-  <div style="background-color: rgb(255, 255, 255);">
-      <h2 class="tldr" style="font-size: 26px;"><br>Track4Gen with Test-time Optimization (from DINO-Tracker)</h2>
-  </div>
-  <div style="background-color: white;">
-      <div style="width: 80%; margin: 0 auto; text-align: center;">
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_1/rainbow_interv_30_erosion_30_big.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_13/rainbow_interv_40_erosion_25.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_14/rainbow_interv_20_erosion_20.mp4" type="video/mp4">
-              </video>
-            </figure>
-          </div>
-
-          <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_11/rainbow_interv_40_erosion_20.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_10/rainbow_interv_30_erosion_10.mp4" type="video/mp4">
-              </video>
-            </figure>
-            <figure>
-              <video poster autoplay controls muted loop playsinline style="width: 480px; height: 270px; border-radius: 4px;">
-                <source src="static/gifs/vid-track/ours_with_dino_tracker/davis_24_0/rainbow_interv_30_erosion_30.mp4" type="video/mp4">
-              </video>
-            </figure>
-          </div>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_0.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
       </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_1.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_2.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+    </div>
   </div>
-</div>
-<hr>
+  <br><br>
 
+  <!-- Real video tracking -->
+  <div class="teaser">
+    <div class="teaser-title">Generated Video Tracking</div>
+    <p class="teaser-description">
+      We track real-world videos using different video diffusion features.
+      Given color-coded query points on the first frame, tracked points on the whole video frames using features from different blocks are displayed.
+    </p>
 
-</div>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bald eagle flying over a tree filled forest.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Generated Video</p>
+        <p>Pixel-space Inconsistency</p>
+        <img src="static/gifs/generated-video-tracking/eagle/original/vid-gen/a-bald-eagle-flying-over-a-tree-filled-forest.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Estimated Point Tracks</p>
+        <p>Feature-space Inconsistency</p>
+        <video src="static/gifs/generated-video-tracking/eagle/original/vid-track/rainbow_interv_30_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+    <br>
 
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bald eagle flying over a tree filled forest.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p>Pixel-space Consistency</p>
+        <img src="static/gifs/generated-video-tracking/eagle/ours/vid-gen/a-bald-eagle-flying-over-a-tree-filled-forest.gif">
+      </div>
+      <div class="teaser-visual">
+        <p>Feature-space Consistency</p>
+        <video src="static/gifs/generated-video-tracking/eagle/ours/vid-track/rainbow_interv_30_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+    <br><hr><br>
 
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a lioness yawning in a field.jpg">
+      </div>
 
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Generated Video</p>
+        <p>Pixel-space Inconsistency</p>
+        <img src="static/gifs/generated-video-tracking/lioness/original/vid-gen/generated.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Estimated Point Tracks</p>
+        <p>Feature-space Inconsistency</p>
+        <video src="static/gifs/generated-video-tracking/lioness/original/vid-track/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+    <br>
 
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a lioness yawning in a field.jpg">
+      </div>
 
+      <div class="teaser-visual">
+        <p>Pixel-space Consistency</p>
+        <img src="static/gifs/generated-video-tracking/lioness/ours/vid-gen/generated.gif">
+      </div>
+      <div class="teaser-visual">
+        <p>Feature-space Consistency</p>
+        <video src="static/gifs/generated-video-tracking/lioness/ours/vid-track/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+
+  </div>
+  
 </body>
 
 </html>
