@@ -128,6 +128,19 @@
       margin-top: 0.5em;
       font-weight: bold;
     }
+
+    .arrow-container {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .arrow-container svg {
+      width: 90%;
+      max-width: 1000px;
+      height: 2em;
+      fill: #007bff;
+    }
+
   </style>
   <title>Anonymous Results</title>
 </head>
@@ -255,7 +268,7 @@
   <div class="teaser">
     <div class="teaser-title">Extending Track4Gen with Test-time Adaptation</div>
     <p class="teaser-description" style="font-size: x-large; font-weight: 500;">
-      We integrate our features with test-time adaptation algorithm of DINO-Tracker.
+      We integrate Track4Gen features with test-time adaptation algorithm of DINO-Tracker.
     </p>
     <div class="teaser-visuals">
       <div class="teaser-visual">
@@ -287,6 +300,88 @@
         
       </div>
     </div>
+    <br><br>
+
+
+    <p class="teaser-description" style="font-size: x-large; font-weight: 500;">
+      Visualization of the optimization progress. 
+    </p>
+
+    <div class="arrow-container">
+      <div style="text-align: center; font-size: 1.5em; font-weight: bold; margin-bottom: -0.5em; color: #000000;">Optimize</div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+        <line x1="0" y1="5" x2="95" y2="5" stroke="black" stroke-width="1.5" />
+        <polygon points="95,1 100,5 95,9" fill="black" />
+      </svg>
+    </div>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_1/0/rainbow_interv_30_erosion_40.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_1/190/rainbow_interv_30_erosion_40.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_1/2000/rainbow_interv_30_erosion_40.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_11/0/rainbow_interv_40_erosion_45.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_11/130/rainbow_interv_40_erosion_45.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_11/10000/rainbow_interv_40_erosion_45.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_13/130/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_13/240/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/davis_24_13/10000/rainbow_interv_40_erosion_25.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/BADJA_24_8/0/rainbow_interv_30_erosion_30.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/BADJA_24_8/100/rainbow_interv_30_erosion_30.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/vid-track/progress/BADJA_24_8/10000/rainbow_interv_30_erosion_30.mp4" controls autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+
+    </div>
+
 
   </div>
 
